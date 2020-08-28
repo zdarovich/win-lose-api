@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: "postgres:latest"
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: winlose
+
+  winlose:
+    build:
+      context: .
+      dockerfile: cmd/server/Dockerfile
+    restart: always
+    ports:
+      - "8081:8081"
+
