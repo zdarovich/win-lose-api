@@ -14,7 +14,7 @@ func New() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		typeVal := c.Request.Header.Get("Source-Type")
 
-		if isTypeAllowed[typeVal]{
+		if !isTypeAllowed[typeVal]{
 			respondWithError(c, 401, "source type is not allowed")
 			return
 		}

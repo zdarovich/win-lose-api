@@ -36,6 +36,7 @@ func (c *Client) call(body *handlers.TrxRequest) (interface{}, error) {
 		return nil, err
 	}
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Source-Type", "game")
 
 	resp, err := c.httpClient.Do(req)
 	if err != nil {

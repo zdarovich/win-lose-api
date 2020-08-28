@@ -17,6 +17,7 @@ go run cmd/client/main.go
 ```shell script
 curl --location --request POST 'http://127.0.0.1:8081/your_url' \
 --header 'Content-Type: application/json' \
+--header 'Source-Type: game' \
 --data-raw '
             {
                "state": "lost",
